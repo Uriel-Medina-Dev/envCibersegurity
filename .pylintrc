@@ -1,0 +1,22 @@
+[MASTER]
+jobs=0
+recursive=y
+ignore-patterns=test_*.py,__pycache__,migrations
+
+[MESSAGES CONTROL]
+disable=
+    C0111,  # missing-docstring - Desactiva la necesidad de docstrings para todo
+    C0103,  # invalid-name - Desactiva validación de nombres de variables
+    R0903,  # too-few-public-methods - Para clases con pocos métodos
+    R0913,  # too-many-arguments - Para funciones con muchos parámetros
+    W1203,  # logging-fstring-interpolation - Para f-strings en logging
+    W0613,  # unused-argument - Argumentos no usados en callbacks
+
+[FORMAT]
+max-line-length=100
+
+[BASIC]
+good-names=db,app,id
+
+[TYPECHECK]
+ignored-modules=pydantic

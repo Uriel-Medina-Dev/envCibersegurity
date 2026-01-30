@@ -1,0 +1,20 @@
+** En este proyecto se creara un proyecto en pyhton respetando la PEP 8 **
+
+--En primera instancia se creara un entorno virtual en el cual sen trabajara
+1.-Crear y activar entorno virtual (desde la terminal):
+
+python -m venv "venv"-->nombre entorno virtual
+# En Windows:
+"venv"\Scripts\activate
+# En Linux/Mac:
+source "venv"/bin/activate
+
+dependencias intaladas
+
+para correr el archivo es 
+uvicorn main:app --reload --host 127.0.0.1 --port 8000
+o tambien
+py -m uvicorn main:app --reload
+
+Para ingresar a la interfaz de grafica de Swagger UI:
+http://127.0.0.1:8000/docs

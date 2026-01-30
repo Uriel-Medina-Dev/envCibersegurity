@@ -1,36 +1,41 @@
-from fastapi import fastapi
+from fastapi import FastAPI
 from typing import List, Optional
 from uuid import UUID, uuid4
 from userModel import Genero,Rol,Usuario
-app = FastApi()
+
+app = FastAPI(
+    title="User API",
+    description="API para gestionar usuarios",
+    version="1.0.0"
+)
 
 db:List[Usuario] = [
     Usuario(
         id=uuid4(),
         name="Uriel",
         lastname="Medina Torres",
-        genero=genero.masculino,
-        roles=[Role.admin]
+        genero=Genero.masculino,
+        roles=[Rol.admin]
     ),
     Usuario(
         id=uuid4(),
         name="Abdallah",
         lastname="Torres Medina",
-        genero=genero.masculino,
-        roles=[Role.user]
+        genero=Genero.masculino,
+        roles=[Rol.user]
     ),
     Usuario(
         id=uuid4(),
         name="Diego",
         lastname="Bustamante Luján",
-        genero=genero.masculino,
-        roles=[Role.guess]
+        genero=Genero.masculino,
+        roles=[Rol.guess]
     )
 ]
 
-@app.get(/)
+@app.get("/")
 async def root():
-    return("Saludo":"xd")
+    return {"Saludo": "xd"}
 
 @app.get("/api/v1/users")
 async def get_users():
